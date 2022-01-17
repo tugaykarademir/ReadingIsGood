@@ -57,8 +57,8 @@ ReadingIsGood platform provides below endpoint as Restful service.
  
  Application can run with below scripts
  
-  docker build -f Dockerfile -t ReadingIsGood-1.0.0 .  
-  docker run -p 8080:8080 ReadingIsGood-1.0.0  
+  docker build -f Dockerfile -t readingisgood-1.0.0 .  
+  docker run -p 8080:8080 readingisgood-1.0.0  
  
  * For database process on consle url : http://localhost:8080/h2-console
  * For user Web services you should have token. For get token you can  find postman collection under /src/main/resources .default <Strong>username:user</Strong>, <Strong>password:secret</Strong>
