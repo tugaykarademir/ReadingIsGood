@@ -65,7 +65,6 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	@Transactional
 	public List<OrderEntity> getAllOrders() {
 		List<OrderEntity> orderList = orderRepositrory.findAll();
 

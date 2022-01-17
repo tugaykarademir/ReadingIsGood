@@ -21,13 +21,13 @@ import com.getir.ReadingIsGood.entity.CustomerEntity;
 import com.getir.ReadingIsGood.service.CustomerService;
 
 @Controller
-@RequestMapping(value = "/customer")
+@RequestMapping(value = "/v1/customer")
 public class CustomerController {
 	private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
 	@Autowired
 	private CustomerService customerService;
 
-	@RequestMapping(method = RequestMethod.POST, value = "/addCustomer", produces = "application/json", consumes = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/addCustomer")
 	public ResponseEntity<String> addCutomer(@Valid @RequestBody CustomerRequestDto customerRequestDto) {
 		try {
 			GeneralResponseDto response = customerService.addCustomer(customerRequestDto);
@@ -40,7 +40,7 @@ public class CustomerController {
 		}
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/deleteCustomer", produces = "application/json", consumes = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/deleteCustomer")
 	public ResponseEntity<String> deleteCutomer(@RequestParam(name = "customerId") Long customerId) {
 		try {
 			GeneralResponseDto response = customerService.deleteCutomer(customerId);
@@ -52,7 +52,7 @@ public class CustomerController {
 		}
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/getCustomer", produces = "application/json", consumes = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/getCustomer" )
 	public ResponseEntity<CustomerEntity> getCutomer(@RequestParam(name = "customerId") Long customerId) {
 
 		CustomerEntity customer = customerService.getCustomerById(customerId);
@@ -60,7 +60,7 @@ public class CustomerController {
 		return new ResponseEntity<CustomerEntity>(customer, HttpStatus.OK);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/getAllCustomer", produces = "application/json", consumes = "application/json")
+	@RequestMapping(method = RequestMethod.GET, value = "/getAllCustomer")
 	public ResponseEntity<List<CustomerEntity>> getCutomer() {
 
 		List<CustomerEntity> customerList = customerService.getAllCustomer();

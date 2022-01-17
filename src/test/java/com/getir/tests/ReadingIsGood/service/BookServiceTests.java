@@ -40,9 +40,9 @@ public class BookServiceTests {
 		bookRequestDto.setStock(10);
 
 		bookService.addBook(bookRequestDto);
-		BookEntity result = bookRepository.getById(bookRequestDto.getId());
+		boolean result = bookRepository.existsById(bookRequestDto.getId());
 
-		Assert.assertTrue(result.getId() == bookRequestDto.getId());
+		Assert.assertTrue(result);
 	}
 
 	@Test
@@ -60,9 +60,9 @@ public class BookServiceTests {
 		bookService.addBook(bookRequestDto);
 		bookService.deleteBook(bookRequestDto.getId());
 
-		BookEntity result = bookRepository.getById(bookRequestDto.getId());
+		boolean result = bookRepository.existsById(bookRequestDto.getId());
 
-		Assert.assertTrue(null == result);
+		Assert.assertFalse(result);
 	}
 
 	@Test

@@ -1,4 +1,4 @@
 FROM openjdk:11
-ADD target/ReadingIsGood-2.5.6.jar ReadingIsGood-2.5.6.jar
+ADD target/ReadingIsGood-1.0.0.jar ReadingIsGood-1.0.0.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","ReadingIsGood-2.5.6.jar"]
+ENTRYPOINT ["java","-jar","ReadingIsGood-1.0.0.jar"]

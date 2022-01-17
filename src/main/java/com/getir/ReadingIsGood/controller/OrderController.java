@@ -23,13 +23,13 @@ import com.getir.ReadingIsGood.entity.OrderEntity;
 import com.getir.ReadingIsGood.service.OrderService;
 
 @Controller
-@RequestMapping(value = "/order")
+@RequestMapping(value = "/v1/order")
 public class OrderController {
 	private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
 	@Autowired
 	private OrderService orderService;
 
-	@RequestMapping(method = RequestMethod.POST, value = "/addOrder", produces = "application/json", consumes = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/addOrder")
 	public ResponseEntity<String> addOrder(@Valid @RequestBody OrderRequestDto orderRequestDto) {
 
 		try {
@@ -42,7 +42,7 @@ public class OrderController {
 		}
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/deleteOrder", produces = "application/json", consumes = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/deleteOrder")
 	public ResponseEntity<String> deleteOrder(@RequestParam(name = "orderId") Long orderId) {
 		GeneralResponseDto response = new GeneralResponseDto();
 		try {
@@ -55,7 +55,7 @@ public class OrderController {
 		}
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/getOrderById", produces = "application/json", consumes = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/getOrderById")
 	public ResponseEntity<OrderEntity> getOrderById(@RequestParam(name = "orderId") Long orderId) {
 
 		OrderEntity order = orderService.getOrderById(orderId);
@@ -63,7 +63,7 @@ public class OrderController {
 
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/getOrderByDate", produces = "application/json", consumes = "application/json")
+	@RequestMapping(method = RequestMethod.POST, value = "/getOrderByDate")
 	public ResponseEntity<List<OrderEntity>> getOrderById(@RequestParam(name = "startDate") Date startDate,@RequestParam(name = "endDate") Date endDate) {
 		
 		List<OrderEntity> order = orderService.getOrdersByDateInterval(startDate,endDate);
@@ -71,14 +71,14 @@ public class OrderController {
 
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/getAllOrders", produces = "application/json", consumes = "application/json")
+	@RequestMapping(method = RequestMethod.GET, value = "/getAllOrders")
 	public ResponseEntity<List<OrderEntity>> getAllOrders() {
 		List<OrderEntity> orderList = orderService.getAllOrders();
 
 		return new ResponseEntity<List<OrderEntity>>(orderList, HttpStatus.OK);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/getAllCustomerOrders", produces = "application/json", consumes = "application/json")
+	@RequestMapping(method = RequestMethod.GET, value = "/getAllCustomerOrders")
 	public ResponseEntity<List<OrderEntity>> getAllCustomerOrders(@RequestParam(name = "customerId") Long customerId) {
 		List<OrderEntity> orderList = orderService.getCustomerOrders(customerId);
 

@@ -22,7 +22,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @Controller
 @CrossOrigin
-@RequestMapping(value = "/tokenApi")
+@RequestMapping(value = "/v1/tokenApi")
 public class SecurityController {
 	private static final Logger logger = LoggerFactory.getLogger(SecurityController.class);
 
@@ -55,6 +55,6 @@ public class SecurityController {
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis()+Integer.parseInt(expireTime)))
                 .signWith(SignatureAlgorithm.HS512, secretKey.getBytes()).compact();
-        return "Bearer -> " + token;
+        return "Bearer " + token;
     }
 }

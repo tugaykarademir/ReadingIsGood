@@ -14,13 +14,13 @@ import com.getir.ReadingIsGood.dto.StatisticsResponseDto;
 import com.getir.ReadingIsGood.service.StatisticsService;
 
 @Controller
-@RequestMapping(value="/statistics")
+@RequestMapping(value="/v1/statistics")
 public class StatisticsController {
 	
 	@Autowired
 	private StatisticsService statisticsService;
 
-	@RequestMapping(value = "/getAllStatistics", method = RequestMethod.GET,produces = "application/json", consumes = "application/json" )
+	@RequestMapping(value = "/getAllStatistics", method = RequestMethod.GET)
 	public ResponseEntity<List<StatisticsResponseDto>>  getStatistics(@RequestParam(name = "customerId") String customerId ){
 		
 		List<StatisticsResponseDto> statisticsResponse  = statisticsService.getAllStatistics(customerId);

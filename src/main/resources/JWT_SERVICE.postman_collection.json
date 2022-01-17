@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "3448e1a2-13f9-4219-8bd6-181b690a2c86",
+		"name": "JWT_SERVICE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetTokenWithUserNameAndPassword",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/tokenApi/getToken?name=user&password=secret",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"tokenApi",
+						"getToken"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "user"
+						},
+						{
+							"key": "password",
+							"value": "secret"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

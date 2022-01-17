@@ -68,9 +68,9 @@ public class CustomerServiceTests {
 
 		
 
-		CustomerEntity result = customerRepository.getById(entity.getCustomerId());
+		boolean result = customerRepository.existsByCustomerId(entity.getCustomerId());
 
-		Assert.assertTrue(result.getCustomerId() == entity.getCustomerId());
+		Assert.assertFalse(result);
 
 	}
 	
@@ -157,13 +157,4 @@ public class CustomerServiceTests {
 		Assert.assertTrue(result == true);
 
 	}
-	
-	/*
-	 * 
-	 * 
-	 * 
-	 * 
-	 * public boolean isPhoneOrEmailExist(String email,String phoneNumber);
-	 * 
-	 */
 }

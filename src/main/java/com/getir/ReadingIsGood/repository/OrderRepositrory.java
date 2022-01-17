@@ -15,4 +15,9 @@ public interface OrderRepositrory extends JpaRepository<OrderEntity, Long> {
 
 	public List<OrderEntity> findAllByCreationDateBetween(Date startDate, Date endDate);
 
+	public boolean existsByOrderId(Long id);
+
+	public OrderEntity findByOrderId(Long id);
+
+
 }

@@ -1,0 +1,732 @@
+{
+	"info": {
+		"_postman_id": "6a313cf5-037d-4ef9-9684-ad0bb7262b3b",
+		"name": "ReadingIsGoodApiServices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddBook",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6IlRDVEtBUkFERU1JUiIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2NDI0NDExNjgsImV4cCI6MTY0MjQ0MTUyOH0.93-FdDfLKabDbC4P10GG7vX54tpvi5kPLwLytALE5klgCoUw8EzubtOnFNgy0zcReIHJ-56kC8AlV-YS4RNtog"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"bookName\" :\"test3\",\r\n\"bookAuthor\":\"test3\",\r\n\"bookIsbnNumber\":\"test3\",\r\n\"stock\" : \"5\",\r\n\"price\":\"25\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/bookApi/addBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"bookApi",
+						"addBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllBookStocks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6IlRDVEtBUkFERU1JUiIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2NDI0NDExNjgsImV4cCI6MTY0MjQ0MTUyOH0.93-FdDfLKabDbC4P10GG7vX54tpvi5kPLwLytALE5klgCoUw8EzubtOnFNgy0zcReIHJ-56kC8AlV-YS4RNtog"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/bookApi/getAllBookStocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"bookApi",
+						"getAllBookStocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBookByName",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6IlRDVEtBUkFERU1JUiIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2NDI0NDExNjgsImV4cCI6MTY0MjQ0MTUyOH0.93-FdDfLKabDbC4P10GG7vX54tpvi5kPLwLytALE5klgCoUw8EzubtOnFNgy0zcReIHJ-56kC8AlV-YS4RNtog"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/bookApi/getBookByName?bookName=test3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"bookApi",
+						"getBookByName"
+					],
+					"query": [
+						{
+							"key": "bookName",
+							"value": "test3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBookByBookId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/bookApi/deleteBook?bookId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"bookApi",
+						"deleteBook"
+					],
+					"query": [
+						{
+							"key": "bookId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBookById",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/bookApi/getBookByName?bookId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"bookApi",
+						"getBookByName"
+					],
+					"query": [
+						{
+							"key": "bookId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSalableBookById",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/bookApi/getBookByName?bookId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"bookApi",
+						"getBookByName"
+					],
+					"query": [
+						{
+							"key": "bookId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBookStock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/bookApi/getBookByName?bookId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"bookApi",
+						"getBookByName"
+					],
+					"query": [
+						{
+							"key": "bookId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCustomer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6IlRDVEtBUkFERU1JUiIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2NDI0Mjc2OTMsImV4cCI6MTY0MjQyODA1M30.QQRGyGF4n4b74oyO-u1ufvCo_epM5pc7cENIRU1bf2DNN-r3dCpeV3lOUwKrXUYArTfOqQ5t_vidaTjybSnTKg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"customerName\" :\"tugay\",\r\n\"customerSurname\":\"karademir\",\r\n\"customerPhoneNumber\":\"111\",\r\n\"customerEmail\":\"tugaykarademir01@gmail.com\",\r\n\"customerAddress\":\"test35\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v/customer/addCustomer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v",
+						"customer",
+						"addCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCustomerByCustomerId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/customer/deleteCustomer?customerId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"customer",
+						"deleteCustomer"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomerByCustomerId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/customer/getCustomer?customerId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"customer",
+						"getCustomer"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllCustomer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/customer/getAllCustomer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"customer",
+						"getAllCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddOrder",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\" :\"1\",\r\n\"bookId\":\"3\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/order/addOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"order",
+						"addOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteOrderByOrderId",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/order/deleteOrder?orderId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"order",
+						"deleteOrder"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrderByOrderId",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/order/getOrderById?orderId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"order",
+						"getOrderById"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrderByDate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/order/getOrderByDate?startDate=1&endDate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"order",
+						"getOrderByDate"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "1"
+						},
+						{
+							"key": "endDate",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomerAllOrders",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/order/getAllCustomerOrders?customerId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"order",
+						"getAllCustomerOrders"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomerMonthlyAllStatistics",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InRlc3QiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjIwNTg4MjAxLCJleHAiOjE2MjA1ODg4MDF9.-w344O0ZUEMTFo33tc4PcV4NzRwm8Nxr45kqxvi-_30gjdrMVMGrMcO7B0nWmsdXR7YbeTJpQTg_vcte2ErfIQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/statistics/getAllStatistics?customerId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"statistics",
+						"getAllStatistics"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
